@@ -85,6 +85,7 @@ ALLOWED FORMATS:
 EXAMPLES:
 - FUNCTION_CALL: open_paint
 - FUNCTION_CALL: draw_rectangle|780|380|1140|700
+- FUNCTION_CALL: sqrt|144  
 - FUNCTION_CALL: add_text_in_paint|AUTOMATED SUCCESS
 - FINAL_ANSWER: [Done]
 
@@ -96,7 +97,7 @@ EXAMPLES:
 Respond with ONLY ONE valid line."""
 
 
-                query = """Please open Paint, draw a rectangle from (780, 300) to (1140, 620), and add the text 'AUTOMATED SUCCESS' inside the rectangle."""
+                query = """Please open Paint, draw a rectangle from (780, 300) to (1140, 620), find the factorial of 8 and display it in a rectangle with relevant a quote from breaking bad."""
 
                 global iteration, last_response
                 while iteration < max_iterations:

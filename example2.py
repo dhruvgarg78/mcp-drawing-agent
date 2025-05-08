@@ -258,7 +258,7 @@ async def add_text_in_paint(text: str) -> dict:
         
         
         # Type the text passed from client
-        paint_window.type_keys(text)
+        paint_window.type_keys(text, with_spaces=True)
         time.sleep(0.5)
         
         # Click to exit text mode
@@ -297,13 +297,13 @@ async def open_paint() -> dict:
         primary_width = GetSystemMetrics(0)
         
         # First move to secondary monitor without specifying size
-        win32gui.SetWindowPos(
-            paint_window.handle,
-            win32con.HWND_TOP,
-            primary_width +0, 0,  # Position it on secondary monitor
-            0, 0,  # Let Windows handle the size
-            win32con.SWP_NOSIZE  # Don't change the size
-        )
+        # win32gui.SetWindowPos(
+        #     paint_window.handle,
+        #     win32con.HWND_TOP,
+        #     primary_width +0, 0,  # Position it on secondary monitor
+        #     0, 0,  # Let Windows handle the size
+        #     win32con.SWP_NOSIZE  # Don't change the size
+        # )
         
         # Now maximize the window
         win32gui.ShowWindow(paint_window.handle, win32con.SW_MAXIMIZE)
