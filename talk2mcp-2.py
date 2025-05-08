@@ -96,7 +96,7 @@ EXAMPLES:
 Respond with ONLY ONE valid line."""
 
 
-                query = """Please open Paint, draw a rectangle from (780,380) to (1140,700), and add the text 'AUTOMATED SUCCESS' inside the rectangle."""
+                query = """Please open Paint, draw a rectangle from (780, 300) to (1140, 620), and add the text 'AUTOMATED SUCCESS' inside the rectangle."""
 
                 global iteration, last_response
                 while iteration < max_iterations:

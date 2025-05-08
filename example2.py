@@ -180,17 +180,19 @@ async def draw_rectangle(x1: int, y1: int, x2: int, y2: int) -> dict:
             time.sleep(0.2)
         
         # Click on the Rectangle tool using the correct coordinates for secondary screen
-        paint_window.click_input(coords=(530, 82 ))
-        time.sleep(0.2)
+        paint_window.click_input(coords=(658, 106))
+        time.sleep(1)
         
         # Get the canvas area
         canvas = paint_window.child_window(class_name='MSPaintView')
         
         # Draw rectangle - coordinates should already be relative to the Paint window
         # No need to add primary_width since we're clicking within the Paint window
-        canvas.press_mouse_input(coords=(x1+2560, y1))
-        canvas.move_mouse_input(coords=(x2+2560, y2))
-        canvas.release_mouse_input(coords=(x2+2560, y2))
+        breakpoint()
+        print(f"About to draw from ({x1},{y1}) to ({x2},{y2})")
+        canvas.press_mouse_input(coords=(x1, y1))
+        canvas.move_mouse_input(coords=(x2, y2))
+        canvas.release_mouse_input(coords=(x2, y2))
         
         return {
             "content": [
@@ -281,7 +283,7 @@ async def open_paint() -> dict:
     global paint_app
     try:
         paint_app = Application().start('mspaint.exe')
-        time.sleep(0.2)
+        time.sleep(1.5)
         
         # Get the Paint window
         paint_window = paint_app.window(class_name='MSPaintApp')
@@ -293,14 +295,14 @@ async def open_paint() -> dict:
         win32gui.SetWindowPos(
             paint_window.handle,
             win32con.HWND_TOP,
-            primary_width + 1, 0,  # Position it on secondary monitor
+            primary_width +0, 0,  # Position it on secondary monitor
             0, 0,  # Let Windows handle the size
             win32con.SWP_NOSIZE  # Don't change the size
         )
         
         # Now maximize the window
         win32gui.ShowWindow(paint_window.handle, win32con.SW_MAXIMIZE)
-        time.sleep(0.2)
+        time.sleep(1)
         
         return {
             "content": [
