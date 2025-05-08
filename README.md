@@ -8,6 +8,8 @@
 Watch the full demo here:  
 [![Watch on YouTube](https://img.youtube.com/vi/DUKnE0a6DQE/0.jpg)](https://youtu.be/DUKnE0a6DQE)
 
+Prompt: "Please open Paint, draw a rectangle from (780, 300) to (1140, 620), find the factorial of 8 and display it in a rectangle with a relevant quote from breaking bad."
+
 ## 🖼️ Screenshots
 
 ### 🔁 Iteration Logs
