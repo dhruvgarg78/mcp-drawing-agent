@@ -186,10 +186,12 @@ async def draw_rectangle(x1: int, y1: int, x2: int, y2: int) -> dict:
         # Get the canvas area
         canvas = paint_window.child_window(class_name='MSPaintView')
         
+        #Activate the canvas by clicking on it
+        canvas.click_input(coords=(800, 400))  # ← uses canvas object
+        time.sleep(0.3)
+
         # Draw rectangle - coordinates should already be relative to the Paint window
         # No need to add primary_width since we're clicking within the Paint window
-        breakpoint()
-        print(f"About to draw from ({x1},{y1}) to ({x2},{y2})")
         canvas.press_mouse_input(coords=(x1, y1))
         canvas.move_mouse_input(coords=(x2, y2))
         canvas.release_mouse_input(coords=(x2, y2))
@@ -235,8 +237,8 @@ async def add_text_in_paint(text: str) -> dict:
             paint_window.set_focus()
             time.sleep(0.5)
         
-        # Click on the Rectangle tool
-        paint_window.click_input(coords=(528, 92))
+        # Click on the text tool
+        paint_window.click_input(coords=(428, 111))
         time.sleep(0.5)
         
         # Get the canvas area
@@ -249,8 +251,11 @@ async def add_text_in_paint(text: str) -> dict:
         time.sleep(0.5)
         
         # Click where to start typing
-        canvas.click_input(coords=(810, 533))
+        canvas.click_input(coords=(834, 409))
+        canvas.click_input(coords=(834, 409))
         time.sleep(0.5)
+
+        
         
         # Type the text passed from client
         paint_window.type_keys(text)
