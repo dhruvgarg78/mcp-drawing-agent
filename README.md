@@ -3,6 +3,18 @@
 **mcp-drawing-agent** is an AI-powered automation tool that uses a language model (Google Gemini) to control Microsoft Paint. It interprets natural language instructions and executes drawing commands such as opening Paint, drawing rectangles, and inserting text — all via the MCP agent framework.
 
 ---
+## 🎥 Demo
+
+Watch the full demo here:  
+[![Watch on YouTube](https://img.youtube.com/vi/DUKnE0a6DQE/0.jpg)](https://youtu.be/DUKnE0a6DQE)
+
+## 🖼️ Screenshots
+
+### 🔁 Iteration Logs
+![image](https://github.com/user-attachments/assets/74cef8e8-8fcc-404b-9557-0fc9c2a4ddef)
+
+### 🖌️ Paint Output
+![image](https://github.com/user-attachments/assets/26494edd-50ea-4b1e-9a39-76bb59a5192b)
 
 ## 🧠 What It Does
 
